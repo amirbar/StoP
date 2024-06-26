@@ -51,10 +51,12 @@ python logistic_eval.py \
 To perform linear probing on ImageNet, you can follow instruction from [VISSL](https://github.com/facebookresearch/vissl/blob/main/GETTING_STARTED.md). Alternatiely, we provide a bash script to convert checkpoints to vissl format and launch experiments on 8 V100 machines each with 8 gpus on SLURM:
 
 ```bash
-bash <output_dir> <checkpoint_path> <dataset_root> <arch>
+bash bash/in1k_eval_vissl.sh <output_dir> <checkpoint_path> <dataset_root> <arch>
 ```
 
-Where arch is vitb, vitl or vitb.
+- arch is vitb, vitl or vitb.
+- checkpoint path is the full path to the checkpoint saved durning training
+- dataset_root is the path to imagenet folder. 
 
 ### Pretrained Models Zoo
 
