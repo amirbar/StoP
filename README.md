@@ -64,9 +64,6 @@ Where arch is vitb, vitl or vitb.
 | ViT-L/16 | ImageNet | 600      | [link](https://huggingface.co/amirbar1/StoP/resolve/main/vit-l16.pth.tar?download=true)      |
 | ViT-H/16 | ImageNet | 300      | [link](https://huggingface.co/amirbar1/StoP/resolve/main/vit-h16.pth.tar?download=true)      |
 
-## Acknowledgments
-
-The codebase relies on the implementation of I-JEPA. We describe differences below.
 
 ### Differences compared to the official I-JEPA implementation
  
@@ -74,9 +71,10 @@ The codebase relies on the implementation of I-JEPA. We describe differences bel
 - For ViT-H training, we deviated from the cosine LR schedule after 250 epochs and continued training with fixed low learning rate to push performance.
 - StoP relies on a previous internal implementation of I-JEPA which utilized additional image augmentations compared to the [official repo](https://github.com/facebookresearch/ijepa). The main difference is the use of hflip, gaussian blur and random grayscale during training. In the ablation experiments (Figures 3-4, Tables 5-6 & 8) we compare different positional embeddings using this same set of augmentations.
 
+## Acknowledgments
+The codebase relies on the implementation of I-JEPA.
 
 ## Citation
-
 If you found this code helpful, feel free to cite our work: 
 
 ```bibtext
