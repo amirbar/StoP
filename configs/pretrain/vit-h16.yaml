@@ -1,0 +1,57 @@
+data:
+  batch_size: 64
+  color_jitter_strength: 0.0
+  pin_mem: true
+  num_workers: 10
+  image_folder: ilsvrc_2024-01-04_1913/
+  crop_size: 224
+  crop_scale:
+  - 0.3
+  - 1.0
+  root_path: /datasets/
+  use_color_distortion: true
+  use_gaussian_blur: true
+  use_horizontal_flip: true
+mask:
+  patch_size: 16
+  min_keep: 10
+  enc_mask_scale:
+    - 0.85
+    - 1.0
+  pred_mask_scale:
+    - 0.15
+    - 0.20
+  aspect_ratio:
+    - 0.75
+    - 1.5
+  num_enc_masks: 1
+  num_pred_masks: 4
+logging:
+  folder: ./checkpoints/vit-h16/
+  write_tag: stop
+meta:
+  copy_data: false
+  target_blocks: 1
+  use_float16: true
+  pred_depth: 12
+  emb_dim: 384
+  load_checkpoint: true
+  model_name: deit_huge
+  read_checkpoint: null
+optimization:
+  clip_grad: 0
+  ipe_scale: 1.0
+  epochs: 300
+  final_weight_decay: 0.4
+  lr: 0.001
+  start_lr: 0.0002
+  final_lr: 1.0e-06
+  warmup: 40
+  weight_decay: 0.04
+  fix_lr_thres: 250
+  fix_lr_strategy: 'const'
+  fix_wd_thres: 250
+  fix_wd_strategy: 'const'
+stop_params:
+  apply_stop: true
+  var: 0.2

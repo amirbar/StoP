@@ -1,0 +1,3 @@
+[submodule "vissl"]
+	path = vissl
+	url = git@github.com:facebookresearch/vissl.git

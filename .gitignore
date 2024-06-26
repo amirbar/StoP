@@ -1,0 +1,6 @@
+src/__pycache__/
+environment_droplet.yml
+env.yml
+__pycache__/
+core
+checkpoints/
