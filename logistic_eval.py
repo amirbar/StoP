@@ -124,7 +124,7 @@ def main(
 
     # -- Function to make train/test dataloader
     def init_pipe(training):
-        size = 256 if res == 24 else res
+        size = 256 if res == 224 else res
         # -- make data transforms
         transform = transforms.Compose([
             transforms.Resize(size=size),
