@@ -28,7 +28,7 @@ torchrun --nnodes=4 --nproc-per-node=8 --node_rank=<node_rank 0-3> --master_addr
 ```
 
 * Prior to running, set the path to imagenet (image_folder, root_folder) in the config file.
-* to train ViT-L/ViT-H change vit-b16 to vit-l16/vit-h16.
+* to train ViT-L/ViT-H change vit-b16 to vit-l16/vit-h14.
 * We --node_rank as 0 on the first node. On other nodes, run the same command with --node_rank=1,...,3 respectively. --master_addr is set as the ip of the node 0.
 
 ### Linear probing eval on ImageNet with 1% of labels (fast)
@@ -64,7 +64,7 @@ bash bash/in1k_eval_vissl.sh <output_dir> <checkpoint_path> <dataset_root> <arch
 | --------- | ----------- | ---------- | --------------- |
 | ViT-B/16 | ImageNet | 600      | [link](https://huggingface.co/amirbar1/StoP/resolve/main/vit-b16.pth.tar?download=true)      |
 | ViT-L/16 | ImageNet | 600      | [link](https://huggingface.co/amirbar1/StoP/resolve/main/vit-l16.pth.tar?download=true)      |
-| ViT-H/16 | ImageNet | 300      | [link](https://huggingface.co/amirbar1/StoP/resolve/main/vit-h16.pth.tar?download=true)      |
+| ViT-H/14 | ImageNet | 300      | [link](https://huggingface.co/amirbar1/StoP/resolve/main/vit-h16.pth.tar?download=true)      |
 
 
 ### Differences compared to the official I-JEPA implementation
